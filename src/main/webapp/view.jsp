@@ -86,14 +86,14 @@
 			<table class = "table table-striped" style = "text-align: center; border: 1px solid #dddddd">
 				<thead>
 					<tr>
-						<th colspan = "3" style = "background-color: #eeeeee; text-align: center;">게시판 글 보기</th>
+						<th colspan = "2" style = "background-color: #eeeeee; text-align: center;">게시판 글 보기</th>
 	
 					</tr>			
 				</thead>
 				<tbody>
 					<tr>
 						<td style = "width: 20%;">글 제목</td>
-						<td colspan = "2"><%= bbs.getBbsTitle() %></td>
+						<td colspan = "2"><%= bbs.getBbsTitle().replaceAll(" ", "&nbsp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll("\n", "<br>") %></td>
 					</tr>
 					<tr>
 						<td>작성자</td>
@@ -105,7 +105,7 @@
 					</tr>
 					<tr>
 						<td>내용</td>
-						<td colspan="2" style="min-height:200px; text-align:left;"><%= bbs.getBbsContent().replaceAll(" ", "&nbsp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll("\n", "<br>") %></td>
+						<td colspan="2" style="height:200px; text-align:left;"><%= bbs.getBbsContent().replaceAll(" ", "&nbsp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll("\n", "<br>") %></td>
 					</tr>
 				</tbody>
 				</table>

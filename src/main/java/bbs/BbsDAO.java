@@ -56,7 +56,7 @@ public class BbsDAO {
 		String SQL = "insert into BBS values (?, ?, ?, ?, ?, ?)";
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(SQL);
-			pstmt.setInt(1,  getNext());
+			pstmt.setInt(1, getNext());
 			pstmt.setString(2, bbsTitle);
 			pstmt.setString(3, userID);
 			pstmt.setString(4, getDate());
@@ -92,8 +92,7 @@ public class BbsDAO {
 		return list;	
 	}
 	public boolean nextPage(int pageNumber) {
-		String SQL = "select * from BBS where bbsID < ? and bbsAvailable = 1 order by bbsID desc LIMIT 10";
-		ArrayList<Bbs> list = new ArrayList<Bbs>();
+		String SQL = "select * from BBS where bbsID < ? and bbsAvailable = 1";
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(SQL);
 			pstmt.setInt(1,  getNext() - (pageNumber - 1) * 10);
@@ -108,7 +107,7 @@ public class BbsDAO {
 	}
 	
 	public Bbs getBbs(int bbsID) {
-		String SQL = "select * from BBS where bbsID < ?";
+		String SQL = "select * from BBS where bbsID = ?";
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(SQL);
 			pstmt.setInt(1,  bbsID);
