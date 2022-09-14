@@ -11,6 +11,7 @@
 <meta name = "viewport" content = "width =device-width", initial-scale ="1"> <%--컴퓨터나 모바일에서 크기를 알아서 맞춰줌--%> 
 <link rel = "stylesheet" href = "css/bootstrap.css"> 
 <title>JSP 게시판 웹 사이트</title>
+<link rel = "stylesheet" href = "css/custom.css"> 
 <style type = "text/css">
 	a, a:hover {
 		color: #000000;
